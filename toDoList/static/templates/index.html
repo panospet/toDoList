@@ -1,6 +1,6 @@
 <div class='row text-center'>
 	<div class='col-sm-4 col-sm-offset-4'>
-		<h1>All Tasks</h1>
+		<h1>My Tasks</h1>
 
 		<button ui-sref="add-task" class='btn btn-primary btn-lg' style='margin-bottom:20px;'>Add Task</button>
 
@@ -11,7 +11,7 @@
 				<span class="glyphicon glyphicon-trash" ng-click="deleteTask(task.id)" style="float: right; padding-top: 5px;"></span>
 
 				<button ng-click="showDesc = !showDesc" style="float: right;"> Show </button>
-				<div class="task-description" ng-show="showDesc"> <small> {{ task.description }} </small> </div>
+				<div class="task-description" ng-show="showDesc"> <small> {{ task.description }} <p>priority: {{ task.priority }}</p> </small> </div>
 			</li>
 		</ul>
 	</div>

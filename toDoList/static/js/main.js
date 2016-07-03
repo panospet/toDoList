@@ -67,5 +67,3 @@ app.controller('MainCtrl', function($scope, Tasks, $state){
 	});
 
 });
-
-

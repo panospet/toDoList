@@ -8,9 +8,9 @@ class Task(models.Model):
         ('O', 'No priority')
     )
 
-    title = models.CharField(max_length=100)
-    description = models.TextField(max_length=500)
-    priority = models.CharField(max_length=1, choices=PRIORITIES, blank=True)
+    title = models.CharField(max_length=100, default='<No title>')
+    description = models.TextField(max_length=500, default='No description given')
+    priority = models.CharField(max_length=1, choices=PRIORITIES, default='O')
     is_completed = models.BooleanField(default=False)
 
     def __str__(self):
