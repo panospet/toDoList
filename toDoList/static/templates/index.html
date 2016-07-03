@@ -1,0 +1,15 @@
+<div class='row text-center'>
+	<div class='col-sm-4 col-sm-offset-4'>
+		<h1>All Tasks</h1>
+
+		<button ui-sref="add-task" class='btn btn-primary btn-lg' style='margin-bottom:20px;'>Add Task</button>
+
+		<ul class="list-group">
+			<li ng-repeat='task in tasks' ng-class="{completed: task.is_completed}" class="list-group-item">
+				<input type="checkbox" ng-checked="task.is_completed" ng-change="toggleCompleted(task)" ng-model='task.is_completed'>  {{task.title}}
+
+				<span class='badge' ng-click="deleteTask(task.id)">X</span>
+			</li>
+		</ul>
+	</div>
+</div>
