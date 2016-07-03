@@ -28,7 +28,7 @@ app.service('Tasks', function($http, BASE_URL){
 	};
 
 	this.update = function(updatedTask){
-		return $http.put(BASE_URL + updatedTask.id, updatedTask);
+		return $http.put(BASE_URL + updatedTask.id + '/', updatedTask);
 	};
 
 	this.delete = function(id){
