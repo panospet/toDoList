@@ -9,6 +9,9 @@
 				<input type="checkbox" ng-checked="task.is_completed" ng-change="toggleCompleted(task)" ng-model='task.is_completed'>  {{task.title}}
 
 				<span class="glyphicon glyphicon-trash" ng-click="deleteTask(task.id)" style="float: right; padding-top: 5px;"></span>
+
+				<button ng-click="showDesc = !showDesc" style="float: right;"> Show </button>
+				<div class="task-description" ng-show="showDesc"> <small> {{ task.description }} </small> </div>
 			</li>
 		</ul>
 	</div>
