@@ -19,7 +19,10 @@ app.config(function($stateProvider, $urlRouterProvider){
 		.state('update-task', {
 			url: '/update',
 			templateUrl: 'static/templates/update.html',
-			controller: 'MainCtrl'
+			controller: 'MainCtrl',
+			params: {
+				taskid: -1,
+			}
 		});
 
 	$urlRouterProvider.otherwise('/');
@@ -32,8 +35,8 @@ app.service('Tasks', function($http, BASE_URL){
 		return $http.get(BASE_URL);
 	};
 
-	this.update = function(updatedTask){
-		return $http.put(BASE_URL + updatedTask.id + '/', updatedTask);
+	this.update = function(updatedTask, id){
+		return $http.put(BASE_URL + id + '/', updatedTask);
 	};
 
 	this.delete = function(id){
@@ -46,9 +49,10 @@ app.service('Tasks', function($http, BASE_URL){
 
 });
 
-app.controller('MainCtrl', function($scope, Tasks, $state){
+app.controller('MainCtrl', function($scope, Tasks, $state, $stateParams){
 
 	$scope.newTask = {};
+	currentTaskID = $stateParams.taskid;
 
 	$scope.addTask = function(){
 		Tasks.addOne($scope.newTask)
@@ -57,16 +61,15 @@ app.controller('MainCtrl', function($scope, Tasks, $state){
 			});
 	};
 
-	$scope.updateTask = function(){
-		Tasks.update($scope.newTask)
-		.then(function(response){
+	$scope.updateTask = function(newTask){
+		Tasks.update(newTask, currentTaskID)
+			.then(function(response){
 				$state.go('index');
 			});
-		newTask = {};
 	};
 
 	$scope.toggleCompleted = function(task){
-		Tasks.update(task);
+		Tasks.update(task, task.id);
 	};
 
 	$scope.deleteTask = function(id){
