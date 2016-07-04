@@ -1,7 +1,13 @@
 .completed {
 	text-decoration: line-through;
+	color: red;
 }
 
 .badge {
 	cursor: pointer;
+}
+
+#myTrash {
+    float: right;
+    padding-top: 5px;
 }

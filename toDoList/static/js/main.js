@@ -15,6 +15,11 @@ app.config(function($stateProvider, $urlRouterProvider){
 			url: '/add',
 			templateUrl: 'static/templates/add.html',
 			controller: 'MainCtrl'
+		})
+		.state('update-task', {
+			url: '/update',
+			templateUrl: 'static/templates/update.html',
+			controller: 'MainCtrl'
 		});
 
 	$urlRouterProvider.otherwise('/');
@@ -38,6 +43,7 @@ app.service('Tasks', function($http, BASE_URL){
 	this.addOne = function(newTask){
 		return $http.post(BASE_URL, newTask)
 	};
+
 });
 
 app.controller('MainCtrl', function($scope, Tasks, $state){
@@ -46,9 +52,17 @@ app.controller('MainCtrl', function($scope, Tasks, $state){
 
 	$scope.addTask = function(){
 		Tasks.addOne($scope.newTask)
-			.then(function(res){
+			.then(function(response){
 				$state.go('index');
 			});
+	};
+
+	$scope.updateTask = function(){
+		Tasks.update($scope.newTask)
+		.then(function(response){
+				$state.go('index');
+			});
+		newTask = {};
 	};
 
 	$scope.toggleCompleted = function(task){
@@ -62,8 +76,8 @@ app.controller('MainCtrl', function($scope, Tasks, $state){
 		})
 	};
 
-	Tasks.all().then(function(res){
-		$scope.tasks = res.data;
+	Tasks.all().then(function(response){
+		$scope.tasks = response.data;
 	});
 
 });
