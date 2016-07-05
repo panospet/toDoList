@@ -3,9 +3,9 @@
 		<h1>My Tasks</h1>
 
 		<button ui-sref="add-task" class='btn btn-primary btn-lg' style='margin-bottom:20px;'>Add Task</button>
-
+		<label>Search: <input ng-model="searchText"></label>
 		<ul class="list-group">
-			<li ng-repeat='task in tasks' ng-class="{completed: task.is_completed}" class="list-group-item">
+			<li ng-repeat='task in tasks | filter:searchText' ng-class="{completed: task.is_completed}" class="list-group-item">
 
 				<input type="checkbox" ng-checked="task.is_completed" ng-change="toggleCompleted(task)" ng-model='task.is_completed'> {{task.title}}
 
