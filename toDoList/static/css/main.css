@@ -10,4 +10,5 @@
 #myTrash {
     float: right;
     padding-top: 5px;
+    cursor: pointer;
 }
