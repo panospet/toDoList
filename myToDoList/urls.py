@@ -23,10 +23,10 @@ task_router = routers.DefaultRouter()
 task_router.register(r'tasks', views.TaskViewSet, base_name='tasks')
 
 urlpatterns = [
-    url('^', include('django.contrib.auth.urls')),
 	url(r'^$', views.index, name='index'),
 	url(r'^api/', include(task_router.urls)),
     url(r'^accounts/login/$', auth_views.login),
-
     url(r'^admin/', admin.site.urls),
+    url(r'^logout/$', 'django.contrib.auth.views.logout', name='logout', kwargs={'next_page': '/'}),
+    url('^', include('django.contrib.auth.urls')),
 ]
