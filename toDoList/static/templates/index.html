@@ -3,6 +3,7 @@
 		<h1>My Tasks</h1>
 
 		<button ui-sref="add-task" class='btn btn-primary btn-lg' style='margin-bottom:20px;'>Add Task</button>
+		<button type="button" class="btn btn-info" href="{% url 'logout' %}">Logout</button>
 		<label>Search: <input ng-model="searchText"></label>
 		<ul class="list-group">
 			<li ng-repeat='task in tasks | filter:searchText' ng-class="{completed: task.is_completed}" class="list-group-item">

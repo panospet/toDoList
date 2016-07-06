@@ -4,7 +4,11 @@ var app = angular.module('myToDoList', [
 
 app.constant('BASE_URL', 'http://localhost:8000/api/tasks/');
 
-app.config(function($stateProvider, $urlRouterProvider){
+app.config(function($stateProvider, $urlRouterProvider, $httpProvider){
+
+	$httpProvider.defaults.xsrfCookieName = 'csrftoken';
+	$httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+
 	$stateProvider
 		.state('index', {
 			url: '/',

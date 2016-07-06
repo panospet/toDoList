@@ -17,13 +17,16 @@ from django.conf.urls import url, patterns, include
 from django.contrib import admin
 from rest_framework import routers
 from toDoList import views
+from django.contrib.auth import views as auth_views
 
 task_router = routers.DefaultRouter()
 task_router.register(r'tasks', views.TaskViewSet, base_name='tasks')
 
 urlpatterns = [
+    url('^', include('django.contrib.auth.urls')),
 	url(r'^$', views.index, name='index'),
 	url(r'^api/', include(task_router.urls)),
+    url(r'^accounts/login/$', auth_views.login),
 
     url(r'^admin/', admin.site.urls),
 ]

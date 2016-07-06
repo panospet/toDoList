@@ -1,20 +1,4 @@
-{% load staticfiles %}
-
-<!DOCTYPE html>
-<html ng-app='myToDoList'>
-    <head>
-        <title>My to-do list!</title>
-
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
-        <link rel='stylesheet' href="{% static 'css/main.css' %}">
-    </head>
-    <body>
-
-        <div ui-view></div>
-
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
-        <script src="{% static 'js/main.js' %}"></script>
-    </body>
-</html>
+{% extends 'base.html' %}
+{% block container %}
+<div ui-view></div>
+{% endblock %}
