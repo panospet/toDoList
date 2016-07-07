@@ -7,8 +7,54 @@
 	cursor: pointer;
 }
 
+.navbar-brand {
+}
+
+#add-task-button {
+	margin-bottom: 20px;
+}
+
+#show-task-button {
+	float: right;
+}
+
+#update-task-button {
+	float: right;
+}
+
+.task-description {
+    background-color: wheat;
+    margin-bottom: -2px;
+    margin-top: 19px;
+    width: 100%;
+    padding: 8px;
+}
+.btn {
+	margin-bottom: 3px;
+	margin-left: 4px;
+}
+
+.list-group-item {
+	padding-bottom: 15px;
+	text-align: -moz-left;
+}
+
+.search {
+	margin-bottom: 10px;
+}
+
 #myTrash {
     float: right;
-    padding-top: 5px;
+    padding-top: 10px;
     cursor: pointer;
+    margin-left:3px;
+    color: black;
+}
+
+.pr {
+	margin-top: 8px;
+}
+
+.form-control {
+	margin-bottom: 5px;
 }
