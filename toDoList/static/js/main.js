@@ -26,6 +26,8 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider){
 			controller: 'MainCtrl',
 			params: {
 				taskid: -1,
+				taskTitle: "",
+				taskDesc: "",
 			}
 		});
 
@@ -56,7 +58,9 @@ app.service('Tasks', function($http, BASE_URL){
 app.controller('MainCtrl', function($scope, Tasks, $state, $stateParams){
 
 	$scope.newTask = {};
-	currentTaskID = $stateParams.taskid;
+	$scope.currentTaskID = $stateParams.taskid;
+	$scope.currentTaskTitle = $stateParams.taskTitle;
+	$scope.currentTaskDesc = $stateParams.taskDesc;
 
 	$scope.addTask = function(){
 		Tasks.addOne($scope.newTask)
@@ -66,7 +70,7 @@ app.controller('MainCtrl', function($scope, Tasks, $state, $stateParams){
 	};
 
 	$scope.updateTask = function(newTask){
-		Tasks.update(newTask, currentTaskID)
+		Tasks.update(newTask, $scope.currentTaskID)
 			.then(function(response){
 				$state.go('index');
 			});

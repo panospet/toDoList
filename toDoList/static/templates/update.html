@@ -1,8 +1,8 @@
 <div class='row text-center'>
 	<div class='col-sm-4 col-sm-offset-4'>
-		<h1>Update task</h1>
-		<input type="text" ng-model="newTask.title" placeholder="title" class='form-control' />
-		<textarea name="textarea" class="form-control" rows="5" ng-model="newTask.description" placeholder="description"></textarea>
+		<h1>Update task "{{currentTaskTitle}}" </h1>
+		<input type="text" ng-model="newTask.title" placeholder="{{currentTaskTitle}}" class='form-control' />
+		<textarea name="textarea" class="form-control" rows="5" ng-model="newTask.description" placeholder="{{currentTaskDesc}}" id="focusedInput"></textarea>
 		<div class="form-group">
             <label for="priority" class="col-sm-1 control-label">Priority:</label>
             <div class="col-sm-12">

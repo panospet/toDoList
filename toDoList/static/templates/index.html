@@ -13,7 +13,7 @@
 				<span id="myTrash" class="glyphicon glyphicon-trash" ng-click="deleteTask(task.id)"></span>
 
 				<button ng-click="showDesc = !showDesc" style="float: right;"> Show </button>
-				<button ui-sref="update-task({taskid: {{task.id}}})" style="float: right;"> Update </button>
+				<button ui-sref="update-task({ taskid: {{task.id}}, taskTitle: '{{task.title}}', taskDesc: '{{task.description}}' })" style="float: right;"> Update </button>
 				<div class="task-description" ng-show="showDesc"> <small> {{ task.description }} <p>priority: {{ task.priority }}</p> </small> </div>
 			</li>
 		</ul>
