@@ -5,27 +5,45 @@
 ### Installation
 
 First of all, clone the repo. Then, navigate inside 'toDoList' folder
-	`cd toDoList`
+
+```
+cd toDoList
+```
 
 Assuming that you have python-pip and virtualenvwrapper installed on your system, just type
 the command:
-	`mkvirtualenv myToDoList`
+
+```
+mkvirtualenv myToDoList
+```
 
 and then, to installed the required packages, type:
-	`pip install -r requirements.txt`
+
+```
+pip install -r requirements.txt
+```
 
 ...and fortunately in will install django and rest framework for you.
 
 To migrate the database, type:
-	`./manage.py makemigrations`
-	`./manage.py migrate`
+
+```
+./manage.py makemigrations
+./manage.py migrate
+```
 
 Then, to run the application with the custom mini-server django provides, type:
-	`./manage.py runserver`
+
+```
+./manage.py runserver
+```
 
 And then hit 'localhost:8000' to your browser. You now see the login screen.
 
 If you finished and want to exit the virtual environment, type:
-	`deactivate`
+
+```
+deactivate
+```
 
 Enjoy!
