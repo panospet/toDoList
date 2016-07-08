@@ -76,7 +76,7 @@ app.controller('MainCtrl', function($scope, Tasks, $state, $stateParams){
 			});
 	};
 
-	$scope.toggleCompleted = function(task){
+	$scope.completionToggle = function(task){
 		Tasks.update(task, task.id);
 	};
 
