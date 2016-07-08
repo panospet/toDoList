@@ -15,7 +15,7 @@
 				<button class="btn btn-info" id="show-task-button" ng-click="showDesc = !showDesc"> Show </button>
 				<button class="btn btn-success" id="update-task-button" ui-sref="update-task({ taskid: {{task.id}}, taskTitle: '{{task.title}}', taskDesc: '{{task.description}}' })">
 				 Update </button>
-				<div class="task-description panel" ng-show="showDesc"> <p id="priority">Priority: {{ task.priority }}</p> {{ task.description }} </div>
+				<div class="task-description panel" ng-show="showDesc"> <p id="priority"><u>Priority: {{ task.priority }}</u></p> {{ task.description }} </div>
 			</li>
 		</ul>
 	</div>
