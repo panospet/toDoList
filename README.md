@@ -10,7 +10,7 @@ First of all, clone the repo. Then, navigate inside 'toDoList' folder
 cd toDoList
 ```
 
-Assuming that you have python-pip and virtualenvwrapper installed on your system, just type
+Assuming that you have `python-pip` and `virtualenvwrapper` installed on your system, just type
 the command:
 
 ```
@@ -38,7 +38,7 @@ Then, to run the application with the custom mini-server django provides, type:
 ./manage.py runserver
 ```
 
-And then hit 'localhost:8000' to your browser. You now see the login screen.
+And then hit `localhost:8000` to your browser. You now see the login screen.
 
 If you finished and want to exit the virtual environment, type:
 
