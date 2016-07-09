@@ -2,6 +2,8 @@
 
 ## Simple to-do list static page application using Django, AngularJS and Django Rest Framework
 
+
+
 ### Installation
 
 First of all, clone the repo. Then, navigate inside 'toDoList' folder
@@ -20,6 +22,13 @@ Type the command:
 mkvirtualenv myToDoList
 ```
 
+or, for using python3:
+
+```
+mkvirtualenv -p /usr/bin/python3 myToDoList
+```
+
+
 and then, to installed the required packages, type:
 
 ```
@@ -31,16 +40,18 @@ pip install -r requirements.txt
 To migrate the database, type:
 
 ```
-./manage.py makemigrations
-./manage.py migrate
+python manage.py makemigrations
+python manage.py migrate
 ```
+
+
 
 ### Fill the database with some stuff
 
 If you want to create your own superuser, type:
 
 ```
-./manage.py createsupersuser
+python manage.py createsupersuser
 ```
 
 and enter your credentials.
@@ -56,12 +67,14 @@ This script fills your database with two users, with usernames 'test' and 'panos
 Each user has some tasks on his name. You can login with their cretentials (see next
 step) and see their tasks.
 
+
+
 ### Run application
 
 To run the application with the custom mini-server django provides, type:
 
 ```
-./manage.py runserver
+python manage.py runserver
 ```
 
 And then hit `localhost:8000` to your browser. You now see the login screen.
