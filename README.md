@@ -29,13 +29,13 @@ mkvirtualenv -p /usr/bin/python3 myToDoList
 ```
 
 
-and then, to installed the required packages, type:
+and then, to install the required packages, type:
 
 ```
 pip install -r requirements.txt
 ```
 
-...and fortunately in will install django and rest framework for you.
+...and fortunately it will install django and rest framework for you.
 
 To migrate the database, type:
 
