@@ -16,4 +16,7 @@ class TaskViewSet(viewsets.ModelViewSet):
 
 @login_required
 def index(request):
-    return render(request, 'toDoList/index.html')
+	'''
+	Index view
+	'''
+	return render(request, 'toDoList/index.html')
